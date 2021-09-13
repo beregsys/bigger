@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::name('api.')->group(function () {
+    Route::resource('v1/tactics', TacticApiController::class)->only('index');
+    Route::resource('v1/techniques', TechniqueApiController::class)->only(['index', 'show']);
+});
 
-Route::resource('v1/tactics', TacticApiController::class)->only('index');
-Route::resource('v1/techniques', TechniqueApiController::class)->only(['index', 'show']);
