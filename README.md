@@ -9,8 +9,8 @@ This is test project that get date from mitre website and build local database w
 cd <repository folder>
 cp .env.example .env
 // add to env file database name, user, pswd and change APP_ENV to production
-php artisan key:generate
 composer install --optimize-autoloader --no-dev
+php artisan key:generate
 npm i
 npm run prod
 php artisan migrate
