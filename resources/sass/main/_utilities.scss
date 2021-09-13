@@ -1,0 +1,12 @@
+.not_found_info_block {
+    padding: 4rem 2rem;
+    border: 2px dashed #d4d4d4;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 2px 1px 2px #fff;
+    color: $secondary;
+    font-size: 1.5rem;
+    .btn {
+        text-shadow: none;
+    }
+}

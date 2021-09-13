@@ -1,0 +1,97 @@
+.app-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.sidebar .sidebar__toggler.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    overflow: hidden;
+    height: 100vh;
+    z-index: 1025;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: all 600ms cubic-bezier(0.8, 0, 0.15, 1.01);
+
+    .head {
+        border-bottom: 1px solid $dark;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .items {
+        overflow-y: auto;
+
+        .accordion-button {
+            &:focus, &:not(.collapsed) {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .foot {
+        border-top: 1px solid $dark;
+        background-color: rgba(0, 0, 0, 0.1);
+
+        .nav-link {
+            color: $primary;
+
+            .small {
+                font-size: 0.65rem;
+            }
+        }
+    }
+
+}
+
+.sidebar-open .sidebar {
+    width: 16rem;
+    left: 0;
+}
+
+@include media-breakpoint-up(lg) {
+    .sidebar {
+        position: relative;
+        left: 0;
+        width: 16rem;
+
+        .btn.close {
+            display: none;
+        }
+    }
+    .sidebar-open .sidebar {
+        position: relative;
+        width: 0;
+        left: -100%;
+    }
+}
+
+.sidebar .nav-link {
+    color: $light;
+    padding: 0.6rem 1rem;
+}
+
+.sidebar .nav-link.active {
+    color: $primary;
+}
+
+.main {
+    flex: 1 1 0%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-rows: 60px auto;
+    // transition: flex-basis 600ms cubic-bezier(0.8, 0, 0.15, 1.01);
+
+    .content {
+        overflow-y: auto;
+    }
+}
